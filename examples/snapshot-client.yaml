@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: snapshot-client
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: snapshot-client
+    spec:
+      containers:
+      - name: snapshot-client
+        imagePullPolicy: Always
+        image: akash4927/snapshot:create
